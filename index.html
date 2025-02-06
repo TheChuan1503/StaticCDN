@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree of</title>
+    <script src="./ajax/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        * {
+            font-family: Monospace;
+        }
+        .tree {
+            width: 100%;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tree of <script>document.write(location.host)</script></h1>
+    <pre class="tree">Loading...</pre>
+    <script>
+        document.title = 'Tree of ' + location.host
+        var e = $('.tree')
+        e.load('./tree.txt',()=>{
+            e.html(e.html().replace('.', location.host))
+        })
+    </script>
+</body>
+</html>
